@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Button, Separator } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import { navigationRef } from './RootNavigation';
+
 import Constants from 'expo-constants';
 
 // You can import from local files
@@ -10,33 +14,21 @@ import WaitForOrder from './components/WaitForOrder';
 import ConfirmOrder from './components/ConfirmOrder';
 import RateOrder from './components/RateOrder';
 
+const Stack = createStackNavigator();
+
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.paragraph}>
-          #wirvsvirus
-        </Text>
-        <Text style={styles.paragraph}>
-          Pickup App
-        </Text>
-      </View>
+      <NavigationContainer ref={navigationRef}>
+        <Stack.Navigator>
+          <Stack.Screen name="Login" component={Login} options={{headerShown: false}} />
+          <Stack.Screen name="Register" component={Register} options={{headerShown: false}} />
+          <Stack.Screen name="Order" component={Order} options={{headerShown: false}} />
+          <Stack.Screen name="WaitForOrder" component={WaitForOrder} options={{headerShown: false}} />
+          <Stack.Screen name="ConfirmOrder" component={ConfirmOrder} options={{headerShown: false}} />
+          <Stack.Screen name="RateOrder" component={RateOrder} options={{headerShown: false}} />
+        </Stack.Navigator>
+      </NavigationContainer>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});

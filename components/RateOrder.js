@@ -1,5 +1,13 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
+import { navigationRef } from '../RootNavigation';
+
+function Separator() {
+  return (
+    <View style={styles.separator}>
+    </View>
+  );
+}
 
 export default class RateOrder extends React.Component {
   render() {
@@ -18,16 +26,29 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 24,
+    backgroundColor: '#4fdbffff',
+    height: '100%',
   },
-  paragraph: {
-    margin: 24,
-    marginTop: 0,
-    fontSize: 14,
-    fontWeight: 'bold',
+  separator: {
+    marginVertical: 12,
+  },
+  input: {
+      marginTop: 10,
+      width: 300,
+  },
+  button: {
+    width: 200,
+    padding: 10,
+    marginTop: 50,
+    backgroundColor: '#4fdbffff',
+    marginBottom: 10,
     textAlign: 'center',
   },
-  logo: {
-    height: 128,
-    width: 128,
-  }
+  paragraph: {
+    textAlign: 'center',
+    marginBottom: 60,
+    marginTop: 0,
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
 });
