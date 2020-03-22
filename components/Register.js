@@ -16,13 +16,13 @@ export default class Register extends React.Component {
 
     this.state = {
         email: '',
+        mobilePhone: '',
         password: '',
         passwordConfirm: '',
     };
   }
 
   save() {
-    //Alert.alert('Credentials', `${this.state.email} + ${this.state.password}`);
     navigationRef.current?.navigate('DeliveryAddress', {});
   }
 
@@ -34,6 +34,12 @@ export default class Register extends React.Component {
           placeholder="E-Mail"
           onChangeText={(email) => this.setState({email})}
           value={this.state.email}
+        />
+        <Input
+          style={styles.input}
+          placeholder="Handynummer"
+          onChangeText={(mobilePhone) => this.setState({mobilePhone})}
+          value={this.state.mobilePhone}
         />
         <Input
           style={styles.input}

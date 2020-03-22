@@ -7,7 +7,7 @@ import { navigationRef } from './RootNavigation';
 import Constants from 'expo-constants';
 
 // You can import from local files
-import Login from './components/Login';
+import Home from './components/Home';
 import Register from './components/Register';
 import Order from './components/Order';
 import DeliveryAddress from './components/DeliveryAddress';
@@ -23,13 +23,13 @@ export default class App extends React.Component {
     return (
       <NavigationContainer ref={navigationRef}>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Login} options={{headerShown: false, title: 'Start'}} />
+          <Stack.Screen name="Home" component={Home} options={{headerShown: false, title: 'Start'}} />
           <Stack.Screen name="Register" component={Register} options={{headerShown: true, title: 'Registrieren'}} />
           <Stack.Screen name="Order" component={Order} options={{headerShown: true, title: 'Einkaufszettel'}} />
           <Stack.Screen name="DeliveryAddress" component={DeliveryAddress} options={{headerShown: true, title: 'Adresse'}} />
           <Stack.Screen name="Payment" component={Payment} options={{headerShown: true, title: 'Bezahlung'}} />
-          <Stack.Screen name="WaitForOrder" component={WaitForOrder} options={{headerShown: false}} />
-          <Stack.Screen name="ConfirmOrder" component={ConfirmOrder} options={{headerShown: true, title: 'Bestätigen Sie Ihre Bestellung'}} />
+          <Stack.Screen name="WaitForOrder" component={WaitForOrder} options={{headerShown: true, title: 'Warten auf Bestellung'}} />
+          <Stack.Screen name="ConfirmOrder" component={ConfirmOrder} options={{headerShown: true, title: 'Erhalt bestätigen'}} />
           <Stack.Screen name="RateOrder" component={RateOrder} options={{headerShown: true, title: 'Bewerten Sie Ihre Bestellung'}} />
         </Stack.Navigator>
       </NavigationContainer>

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+import { Input, Button } from 'react-native-elements';
 import { navigationRef } from '../RootNavigation';
 
 function Separator() {
@@ -10,24 +11,56 @@ function Separator() {
 }
 
 export default class ConfirmOrder extends React.Component {
+  confirmDeliveration() {}
+
+  addConflict() {}
+
+  giveTip() {}
+
+
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollView}>
         <Text style={styles.paragraph}>
           Bitte bestätigen Sie, ob Sie die Sendung erhalten haben.
         </Text>
-      </View>
+        <Text style={styles.paragraph}>
+          Sendungs-ID: 7545685636353547
+          Lieferdatum: 22. März 2020
+        </Text>
+        <Button
+            title="Erhalt Bestätigen"
+            style={styles.buttonLarge}
+            large
+            onPress={ () => this.confirmDeliveration() }
+          />
+          <Button
+              title="Reklamieren"
+              type="outline"
+              style={styles.buttonLarge}
+              large
+              onPress={ () => this.addConflict() }
+            />
+            <Button
+                title="Trinkgeld geben"
+                type="outline"
+                style={styles.buttonLarge}
+                large
+                onPress={ () => this.giveTip() }
+              />
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  scrollView: {
     alignItems: 'center',
     justifyContent: 'center',
     padding: 24,
     backgroundColor: '#fff',
-    height: '100%',
+    flex: 1,
+    flexDirection: 'column',
   },
   separator: {
     marginVertical: 12,
@@ -43,9 +76,16 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     textAlign: 'center',
   },
+  buttonLarge: {
+    width: 350,
+    padding: 10,
+    marginTop: 10,
+    marginBottom: 10,
+    textAlign: 'center',
+  },
   paragraph: {
     textAlign: 'center',
-    marginBottom: 60,
+    marginBottom: 10,
     marginTop: 0,
     fontSize: 18,
     fontWeight: 'bold',

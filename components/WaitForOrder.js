@@ -14,15 +14,25 @@ export default class WaitForOrder extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.paragraph}>
-          Warten auf die Bestellung...
+          Ihre Bestellung wurde aufgenommen.
+          Der Händler meldet sich bald bei Ihnen zurück und bespricht mit Ihnen die weiteren Details zur Auslieferung.
         </Text>
-        <Image style={styles.logo} source={require('../assets/snack-icon.png')} />
+        <Image
+          style={styles.waitForOrderLogo}
+          width={240}
+          height={320}
+          source={require('../assets/lilly.jpg')} />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  waitForOrderLogo: {
+    resizeMode: 'stretch',
+    borderWidth: 1,
+    borderColor: '#777777',
+  },
   container: {
     alignItems: 'center',
     justifyContent: 'center',
