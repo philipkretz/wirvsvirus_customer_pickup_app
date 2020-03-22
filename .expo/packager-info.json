@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 932,
+  "expoServerNgrokUrl": "https://uc-t4j.anonymous.wirvsvirus-project.exp.direct",
+  "packagerNgrokUrl": "https://packager.uc-t4j.anonymous.wirvsvirus-project.exp.direct",
+  "ngrokPid": 949,
   "webpackServerPort": null
 }

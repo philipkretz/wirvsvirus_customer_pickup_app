@@ -22,23 +22,13 @@ export default class Register extends React.Component {
   }
 
   save() {
-    Alert.alert('Credentials', `${this.state.email} + ${this.state.password}`);
+    //Alert.alert('Credentials', `${this.state.email} + ${this.state.password}`);
+    navigationRef.current?.navigate('DeliveryAddress', {});
   }
 
   render() {
     return (
       <View style={styles.container}>
-      <Image
-        style={{marginBottom: 20}}
-        width={140}
-        height={130}
-        source={require('../assets/logo.png')}
-        />
-
-      <Text style={styles.paragraph}>
-          Registrieren
-      </Text>
-    <Separator />
         <Input
           style={styles.input}
           placeholder="E-Mail"

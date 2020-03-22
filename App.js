@@ -10,6 +10,8 @@ import Constants from 'expo-constants';
 import Login from './components/Login';
 import Register from './components/Register';
 import Order from './components/Order';
+import DeliveryAddress from './components/DeliveryAddress';
+import Payment from './components/Payment';
 import WaitForOrder from './components/WaitForOrder';
 import ConfirmOrder from './components/ConfirmOrder';
 import RateOrder from './components/RateOrder';
@@ -21,12 +23,14 @@ export default class App extends React.Component {
     return (
       <NavigationContainer ref={navigationRef}>
         <Stack.Navigator>
-          <Stack.Screen name="Login" component={Login} options={{headerShown: false}} />
-          <Stack.Screen name="Register" component={Register} options={{headerShown: false}} />
-          <Stack.Screen name="Order" component={Order} options={{headerShown: false}} />
+          <Stack.Screen name="Home" component={Login} options={{headerShown: false, title: 'Start'}} />
+          <Stack.Screen name="Register" component={Register} options={{headerShown: true, title: 'Registrieren'}} />
+          <Stack.Screen name="Order" component={Order} options={{headerShown: true, title: 'Einkaufszettel'}} />
+          <Stack.Screen name="DeliveryAddress" component={DeliveryAddress} options={{headerShown: true, title: 'Adresse'}} />
+          <Stack.Screen name="Payment" component={Payment} options={{headerShown: true, title: 'Bezahlung'}} />
           <Stack.Screen name="WaitForOrder" component={WaitForOrder} options={{headerShown: false}} />
-          <Stack.Screen name="ConfirmOrder" component={ConfirmOrder} options={{headerShown: false}} />
-          <Stack.Screen name="RateOrder" component={RateOrder} options={{headerShown: false}} />
+          <Stack.Screen name="ConfirmOrder" component={ConfirmOrder} options={{headerShown: true, title: 'Bestätigen Sie Ihre Bestellung'}} />
+          <Stack.Screen name="RateOrder" component={RateOrder} options={{headerShown: true, title: 'Bewerten Sie Ihre Bestellung'}} />
         </Stack.Navigator>
       </NavigationContainer>
     );
