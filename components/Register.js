@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Alert, Text, View, StyleSheet } from 'react-native';
+import { Alert, Text, View, Image, StyleSheet } from 'react-native';
 import { Input, Button } from 'react-native-elements'
 import { navigationRef } from '../RootNavigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
 function Separator() {
   return (
     <View style={styles.separator}>
@@ -16,56 +17,28 @@ export default class Register extends React.Component {
     this.state = {
         email: '',
         password: '',
-        address: '',
-        postcode: '',
-        city: '',
-        firstName: '',
-        lastName: '',
+        passwordConfirm: '',
     };
   }
 
   save() {
-    Alert.alert('Credentials', `${this.state.firstName} + ${this.state.lastName} + ${this.state.address} + ${this.state.email} + ${this.state.password}`);
+    Alert.alert('Credentials', `${this.state.email} + ${this.state.password}`);
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.paragraph}>
-          Registrieren
-        </Text>
+      <Image
+        style={{marginBottom: 20}}
+        width={140}
+        height={130}
+        source={require('../assets/logo.png')}
+        />
 
-        <Separator />
-        <Input
-          style={styles.input}
-          placeholder="Vorname"
-          onChangeText={(firstName) => this.setState({firstName})}
-          value={this.state.firstName}
-        />
-        <Input
-          style={styles.input}
-          placeholder="Nachname"
-          onChangeText={(lastName) => this.setState({lastName})}
-          value={this.state.lastName}
-        />
-        <Input
-          style={styles.input}
-          placeholder="Lieferadresse"
-          onChangeText={(address) => this.setState({address})}
-          value={this.state.address}
-        />
-        <Input
-          style={styles.input}
-          placeholder="PLZ"
-          onChangeText={(postcode) => this.setState({postcode})}
-          value={this.state.postcode}
-        />
-        <Input
-          style={styles.input}
-          placeholder="Ort"
-          onChangeText={(city) => this.setState({city})}
-          value={this.state.city}
-        />
+      <Text style={styles.paragraph}>
+          Registrieren
+      </Text>
+    <Separator />
         <Input
           style={styles.input}
           placeholder="E-Mail"
@@ -78,6 +51,13 @@ export default class Register extends React.Component {
           secureTextEntry={true}
           onChangeText={(password) => this.setState({password})}
           value={this.state.password}
+        />
+        <Input
+          style={styles.input}
+          placeholder="Passwort bestätigen"
+          secureTextEntry={true}
+          onChangeText={(passwordConfirm) => this.setState({passwordConfirm})}
+          value={this.state.passwordConfirm}
         />
         <Button
             title="Speichern"
@@ -95,7 +75,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 24,
-    backgroundColor: '#4fdbffff',
+    backgroundColor: '#fff',
     height: '100%',
   },
   separator: {
@@ -109,7 +89,6 @@ const styles = StyleSheet.create({
     width: 200,
     padding: 10,
     marginTop: 50,
-    backgroundColor: '#4fdbffff',
     marginBottom: 10,
     textAlign: 'center',
   },

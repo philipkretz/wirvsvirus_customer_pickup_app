@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 24,
-    backgroundColor: '#4fdbffff',
+    backgroundColor: '#fff',
     height: '100%',
   },
   separator: {
@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     width: 200,
     padding: 10,
     marginTop: 50,
-    backgroundColor: '#4fdbffff',
     marginBottom: 10,
     textAlign: 'center',
   },
