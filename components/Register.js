@@ -17,6 +17,8 @@ export default class Register extends React.Component {
         email: '',
         password: '',
         address: '',
+        postcode: '',
+        city: '',
         firstName: '',
         lastName: '',
     };
@@ -51,6 +53,18 @@ export default class Register extends React.Component {
           placeholder="Lieferadresse"
           onChangeText={(address) => this.setState({address})}
           value={this.state.address}
+        />
+        <Input
+          style={styles.input}
+          placeholder="PLZ"
+          onChangeText={(postcode) => this.setState({postcode})}
+          value={this.state.postcode}
+        />
+        <Input
+          style={styles.input}
+          placeholder="Ort"
+          onChangeText={(city) => this.setState({city})}
+          value={this.state.city}
         />
         <Input
           style={styles.input}
